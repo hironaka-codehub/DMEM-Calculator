@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DMEM Calculator</title>
+  <h3> DMEM Calculator </h3>
+</head>
+<body>
+<input id="number" type = "text" onkeypress='return validateQty(event);'>
+<p> ml</p>
+<p id="demo"> </p>
+<button onclick="calculate()"> Calculate</button>
+<p>Collagenase 1% = <span id="onepercent"></span> mg </p>
+<p>Collagenase 0.1% = <span id="pointone"></span> mg </p>
+<hr>
+<p><strong>Osteogenic Medium</strong></p>
+<p>Vit C= <span id="vitC"></span> ul </p>
+<p>Dex = <span id="dex"></span> ul </p>
+<p>beta GP = <span id="bGP"></span> ul </p>
+<hr>
+<p><strong>Adipogenic Medium</strong></p>
+<p>Insulin= <span id="insulin"></span> ul </p>
+<p>Dexamethasone= <span id="dexamethasone"></span> ul </p>
+<p>3-isobutyl-1-methylzanthine = <span id="im"></span> ul </p>
+
+<script>
+function validateQty(event) {
+    var key = window.event ? event.keyCode : event.which;
+if (event.keyCode == 13 || event.keyCode == 8 || event.keyCode == 46
+ || event.keyCode == 37 || event.keyCode == 39) {
+    return true;
+}
+else if ( key < 48 || key > 57 ) {
+    return false;
+}
+else return true;
+};
+
+
+function calculate() {
+  var Medium, onepercent, pointone, vitC, dex, bGP, insulin, dexamethasone , im ;
+  Medium = document.getElementById("number").value;
+  
+  onepercent  = (Medium * 10); 
+    pointone  = (Medium);
+    vitC = Medium * 10
+  dex = Medium / 10
+  bGP = Medium * 10
+  insulin = Medium * 10
+  dexamethasone = Medium * 5
+  im = Medium
+    
+  document.getElementById("onepercent").innerHTML = onepercent;
+    document.getElementById("pointone").innerHTML = pointone;
+    document.getElementById("vitC").innerHTML = vitC;
+    document.getElementById("dex").innerHTML = dex;
+    document.getElementById("bGP").innerHTML = bGP;
+    document.getElementById("insulin").innerHTML = insulin;
+    document.getElementById("dexamethasone").innerHTML = dexamethasone;
+    document.getElementById("im").innerHTML = im;
+}
+</script>
+<p> Copyright© wai irm 2017
+TMDU MM TEAM
+</p>
+</body>
+</html>
